@@ -6,5 +6,4 @@ export interface RdsProps extends cdk.StackProps {
     securityGroupId:string;
     aZs:string[];
     privateSubnets:string[];
-    snapshotArn:string;
 }
