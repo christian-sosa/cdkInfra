@@ -49,9 +49,9 @@ export class RDSStack extends cdk.Stack {
       engine: rds.DatabaseInstanceEngine.mysql({ version: MysqlEngineVersion.VER_5_7_22 }),
       instanceType: InstanceType.of(InstanceClass.T2, InstanceSize.MEDIUM),
       instanceIdentifier: `FALP-${props.stage}`,
-      databaseName: 'wordpress',
+      databaseName: `FALP-${props.name}`,
       publiclyAccessible: false,
-      credentials: rds.Credentials.fromGeneratedSecret('wordpress'),
+      credentials: rds.Credentials.fromGeneratedSecret('RDS'),
       vpc: this.vpc,
       vpcSubnets: {
         subnets: this.subnets
